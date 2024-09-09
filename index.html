@@ -57,11 +57,11 @@
         new TypeIt('#overtext', {
             lifeLike: true,
         })
-            .type("Question: ", { delay: 600 })
-            .type("How can we help students learn better?", { delay: 700 })
-            .move(-14, { delay: 500 })
-            .delete(8, { delay: 500 })
-            .type("everyone", { delay: 500 })
+            .type("Question: ")
+            .type("How can we help students learn better?")
+            .move(-14,)
+            .delete(8,)
+            .type("everyone",)
             .move(null, { delay: 200, to: 'end', instant: true })
             .go();
 
@@ -69,12 +69,12 @@
             setTimeout(function () {
                 // Add the 'is-inactive' class to fade out the overlay
                 document.querySelector('.over-lay').classList.add('is-inactive');
-            }, 12500); // 12 seconds delay
+            }, 10000); // 12 seconds delay
 
             setTimeout(function () {
                 // Add the 'dead' class to change z-index
                 document.querySelector('.over-lay').classList.add('dead');
-            }, 1400); // 15 seconds delay
+            }, 10500); // 15 seconds delay
         };
 
 
