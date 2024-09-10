@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body id="aboutme">
+
+    <header>
+        <a href="index.html" class="logo">AJC</a>
+        <ul class="navlist">
+            <a href="about.html">About Me</a>
+            <a href="publications.html">Publications</a>
+            <a href="contact.html">Contact</a>
+            <a href="Docs/Alejandrocv.pdf">CV</a>
+        </ul>
+        <button class="hamburger">
+            <div class="bar">
+            </div>
+            <nav class="mobile-nav">
+                <a href="about.html">About Me</a>
+                <a href="publications.html">Publications</a>
+                <a href="contact.html">Contact</a>
+                <a href="Docs/Alejandrocv.pdf">CV</a>
+
+            </nav>
+    </header>
+
+    <div class="about-info">
+        <div class="image-container">
+            <img src="Docs/Dino.png" class="strewn-image" alt="Image 1" id="dino">
+            <img src="Docs/arm.png" class="strewn-image" alt="Image 2" id="arm">
+            <img src="Docs/PC.png" class="strewn-image" alt="Image 3" id="PC">
+            <img src="Docs/Baseball.png" class="strewn-image" alt="Image 4" id="Baseball">
+            <img src="Docs/board.png" class="strewn-image" alt="Image 5" id="Boogie">
+        </div>
+        <div class="about-title">
+            A random assortment of me
+        </div>
+        <!-- Dialog Modals for each image -->
+        <dialog id="dialog-dino">
+            <div class="dialogHead" style="background-color: #ff0000;">
+                <h1>It's a Dinosaur!</h1>
+            </div>
+            <div class="dialog-text">
+                <p>There was one movie I watched on repeat all of my childhood: Jurassic Park. As such, it has shaped my
+                    scientific endeavors to this day.Through the use of Cognitive Psychology, I hope to metaphsycially
+                    turn someone into a T-rex. </p>
+            </div>
+        </dialog>
+
+        <dialog id="dialog-arm">
+            <div class="dialogHead" style="background-color: #fff700;">
+                <h1 style="color: black">Broken Arm</h1>
+            </div>
+            <div class="dialog-text">
+                <p>I've only ever broken one bone in my body and it's because some punk tackled me during a game
+                    of tag in the 3rd grade. I'll never forgive you Casey.</p>
+            </div>
+        </dialog>
+
+        <dialog id="dialog-pc">
+            <div class="dialogHead" style="background-color: #2fff00;">
+                <h1 style="color: black">My PC</h1>
+            </div>
+            <div class="dialog-text">
+                <p>My PC is an extension of my body. Not really, but I use it almost every day. Whether I'm coding a new
+                    expereiment or playing video games, you'll usually find me near a computer. Did I mention I'm
+                    halfway decent at CSS, HTML, and JS?</p>
+            </div>
+        </dialog>
+
+        <dialog id="dialog-baseball">
+            <div class="dialogHead" style="background-color: #0011ff;">
+                <h1>Baseball</h1>
+            </div>
+            <div class="dialog-text">
+                <p>Yes, it's embarrasing to admit, but I'm a Dodgers fan. Also, I like baseball, which is possibly even
+                    more embarrassing. Anyways, It's SHOTIME </p>
+            </div>
+        </dialog>
+
+        <dialog id="dialog-boogie">
+            <div class="dialogHead" style="background-color: #ff00f2;">
+                <h1>Boogie</h1>
+            </div>
+            <div class="dialog-text">
+                <p>In my free time I like to go body-boarding around San Diego. It's a lot less stressful than surfing
+                    because you get to lie down!</p>
+            </div>
+
+        </dialog>
+        <script src="site.js"> </script>
+
+</body>
+
+</html>
