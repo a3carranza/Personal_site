@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Silk";
+  src: url("Fonts/slkscr-webfont.woff") format("woff");
+  font-weight: normal;
+}
+@font-face {
   font-family: "OstritchSans";
   src: url("Fonts/OstrichSans-Medium.otf") format("opentype"),
     url("Fonts/ostrich-sans-rounded.woff") format("woff");
@@ -260,20 +265,6 @@ section {
   font-size: 20px;
 }
 
-.image-container {
-  flex: 1;
-  display: flex; /* To center image if needed */
-  justify-content: center;
-}
-
-.image-container img {
-  width: 100%; /* Adjust to fit within container */
-  max-width: 500px; /* Max width if needed */
-  height: auto;
-  border: 5px solid rgb(134, 97, 245);
-  border-radius: 30px;
-}
-
 .hamburger {
   position: relative;
   display: block;
@@ -516,9 +507,10 @@ a {
   .about-text h2 {
     font-size: 15px;
   }
-  .image-container img {
-    /* Adjust to fit within container */
-    max-width: 400px; /* Max width if needed */
+  .image-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
   }
 }
 @media screen and (max-width: 610px) {
@@ -596,5 +588,229 @@ a {
   }
   .Home-text h2 {
     font-size: 10px;
+  }
+}
+
+.image-container {
+  position: relative;
+  width: 95vw;
+  height: 95vh;
+}
+
+.strewn-image {
+  position: fixed;
+  transform-origin: center;
+  transition: transform 1s ease;
+}
+.strewn-image:hover {
+  animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+#dino {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 450px;
+  top: 26%;
+  right: 5%;
+}
+#arm {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 250px;
+  top: 30%;
+  right: 70%;
+  transform: rotate(-30deg);
+}
+#PC {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 250px;
+  top: 65%;
+  right: 70%;
+  transform: rotate(25deg);
+}
+#Baseball {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 150px;
+  top: 47%;
+  right: 45%;
+}
+#Boogie {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 200px;
+  top: 65%;
+  right: 20%;
+  transform: rotate(-80deg);
+}
+
+dialog {
+  border: 3px solid white; /* White border to separate the dialog from the background */
+  border-radius: 0px; /* Remove rounded corners to make the dialog box square */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 0 0 transparent;
+  outline: none;
+  /* Simulating the black box behind the dialog */
+  box-shadow: 10px 10px 0px 0px black;
+}
+.dialogHead {
+  /* Background color for the header */
+  color: rgb(255, 255, 255); /* Text color */
+  padding: 10px; /* Padding inside the header */
+}
+.dialogHead h1 {
+  font-family: "Gross";
+  font-size: 40px;
+}
+.dialog-text p {
+  font-family: "Silk";
+  padding: 10px;
+}
+
+dialog::backdrop {
+  display: none;
+}
+.about-title {
+  position: absolute; /* Position relative to the nearest positioned ancestor (or the viewport if none is found) */
+  top: 18%; /* 20% from the top of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust horizontal centering */
+  font-size: 200px;
+  text-align: center; /* Center text within the div */
+  padding: 10px; /* Optional padding */
+  color: white; /* Text color */
+  font-family: "Gross";
+  z-index: -1;
+}
+@media screen and (max-width: 996px) {
+  .about-title {
+    font-size: 150px;
+    top: 25%;
+  }
+  #dino {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 300px;
+  }
+  #arm {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 150px;
+  }
+  #PC {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 150px;
+  }
+  #Baseball {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+  }
+  #Boogie {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+  }
+}
+@media screen and (max-width: 754px) {
+  .about-title {
+    font-size: 100px;
+    top: 30%;
+  }
+  #dino {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 250px;
+  }
+  #arm {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+  }
+  #PC {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+  }
+  #Baseball {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 75px;
+  }
+  #Boogie {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 70px;
+  }
+}
+
+@media screen and (max-width: 489px) {
+  .about-title {
+    font-size: 75px;
+    top: 30%;
+  }
+  #dino {
+    right: -5%;
+  }
+  #PC {
+    right: 60%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-title {
+    font-size: 50px;
+    top: 30%;
+  }
+  #dino {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 250px;
+    right: -15%;
+  }
+  #arm {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+    right: 50%;
+    top: 20%;
+  }
+  #PC {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 100px;
+    right: 60%;
+  }
+  #Baseball {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 75px;
+    top: 50%;
+  }
+  #Boogie {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 70px;
   }
 }
