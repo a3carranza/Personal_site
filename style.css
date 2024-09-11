@@ -122,7 +122,6 @@ header {
   opacity: 0%;
   transition: 1s;
 }
-
 #overtext {
   font-family: "Gross";
   font-size: 40px;
@@ -136,6 +135,15 @@ header {
   font-weight: 400px;
   color: white;
   font-family: "Picnic";
+}
+#aboutme .logo:hover {
+  color: rgb(222, 222, 222);
+}
+#contact .logo:hover {
+  color: rgb(222, 222, 222);
+}
+#publications .logo:hover {
+  color: rgb(222, 222, 222);
 }
 .navlist {
   display: flex;
