@@ -48,34 +48,22 @@
         </div>
 
         </div>
-
     </section>
     <script src="site.js"> </script>
     <script src="https://unpkg.com/typeit@8.0.0/dist/index.umd.js"></script>
     <script>
-        document.addEventListener('click', function () { document.querySelector('.over-lay').classList.add('fast-inactive') });
         const overlay = document.querySelector(".over-lay");
-        new TypeIt('#overtext', {
-            speed: 60
-        })
-            .type("Question: ")
-            .type("How can we help students learn better?")
-            .move(-14,)
-            .delete(8,)
-            .type("everyone",)
-            .move(null, { delay: 200, to: 'end', instant: true })
-            .go();
 
         window.onload = function () {
             setTimeout(function () {
                 // Add the 'is-inactive' class to fade out the overlay
                 document.querySelector('.over-lay').classList.add('is-inactive');
-            }, 7000);
+            }, 500);
 
             setTimeout(function () {
                 // Add the 'dead' class to change z-index
                 document.querySelector('.over-lay').classList.add('dead');
-            }, 7500);
+            }, 500);
         };
 
 
