@@ -120,8 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  //Tarot cards
-
   // Attach event listeners to open dialogs from the clicked image
   images.forEach(({ image, dialog }) => {
     openDialogFromImage(image, dialog);
@@ -133,12 +131,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-cards.forEach(function (card) {
-  card.addEventListener("click", function () {
-    card.classList.toggle("active"); // Toggle the 'active' class on the clicked card
-  });
-});
+//Tarot cards
 
+const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints;
+
+if (isTouchDevice) {
+  // Handle click effect for touch devices
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      card.classList.toggle("active"); // Toggle the 'active' class on the clicked card
+    });
+  });
+} else {
+  // For non-touch devices, use hover effect
+  // No additional JS needed; it's handled by CSS
+}
 // Stars
 const starContainer = document.querySelector(".star-container");
 const numberOfStars = 400; // Adjust as needed

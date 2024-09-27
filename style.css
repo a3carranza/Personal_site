@@ -503,14 +503,19 @@ a {
   perspective: 800px;
 }
 
-.card-container:hover > .card {
-  cursor: pointer;
-  transform: rotateY(180deg);
+@media (hover: hover) and (pointer: fine) {
+  .card-container:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
 }
 
-.card.active {
-  cursor: pointer;
-  transform: rotateY(180deg);
+/* For devices without hover capabilities (e.g., touchscreens) */
+@media (hover: none) and (pointer: coarse) {
+  .card.active {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
 }
 
 .card {
