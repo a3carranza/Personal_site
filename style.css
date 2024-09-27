@@ -57,6 +57,13 @@
     url("Fonts/PicNic-Regular.woff2") format("woff2");
   font-weight: normal;
 }
+@font-face {
+  font-family: "Trick";
+  src: url("Fonts/Trickster-Regular.woff") format("woff"),
+    url("Fonts/Trickster-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -476,6 +483,85 @@ a {
   cursor: pointer;
 }
 
+.research-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 3rem;
+  background: rgb(63, 40, 130);
+  background: linear-gradient(
+    180deg,
+    rgb(63, 40, 130) 36%,
+    rgb(47, 72, 147) 100%
+  );
+}
+
+.card-container {
+  width: 350px;
+  height: 550px;
+  perspective: 800px;
+}
+
+.card-container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card.active {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 1500ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front {
+  display: flex; /* Ensure that flex properties are applied */
+  align-items: center; /* Center the image vertically */
+  justify-content: center; /* Center the image horizontally */
+  border: solid 5px black;
+}
+
+.front img {
+  width: 100%; /* Stretch the image to fit the width of the .front */
+  height: 100%; /* Stretch the image to fit the height of the .front */
+  display: block;
+}
+.back {
+  background-color: #decaaa;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border: solid 5px black;
+}
+.back h1 {
+  font-family: "Trick";
+  margin: 20px;
+  text-align: center;
+}
+.back p {
+  margin: 15px;
+  text-align: justify;
+}
+
 @media screen and (max-width: 1200px) {
   .about-text {
     padding-right: 30px;
@@ -486,8 +572,13 @@ a {
   .about-text h2 {
     font-size: 15px;
   }
+  .card-container {
+    width: 300px;
+    height: 500px;
+    perspective: 700px;
+  }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 1100px) {
   .mobile-nav {
     display: none;
   }
@@ -495,10 +586,47 @@ a {
     display: none;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
   .navlist {
     display: none;
   }
+  .card-container {
+    width: 250px;
+    height: 450px;
+    perspective: 700px;
+    box-sizing: border-box;
+  }
+  .back h1 {
+    font-size: 20px;
+  }
+  .back p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .research-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    justify-content: flex-start; /* Adjust to start from the top */
+    gap: 1rem; /* Adjust gap as needed */
+    overflow-y: auto;
+    padding-top: 60px;
+    padding-bottom: 10px;
+  }
+
+  .card-container {
+    padding-top: 50px;
+    width: 300px;
+    height: 500px;
+    perspective: 800px;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 800px) {
   .about-info {
     flex-direction: column;
     padding-bottom: 2rem;
@@ -916,5 +1044,32 @@ dialog::backdrop {
     right: 30%;
     font-size: 17px;
     transform: rotate(10deg);
+  }
+}
+
+/* Star container */
+.star-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Ensure stars don't interfere with interactions */
+}
+
+/* Individual star */
+.star {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle ease-in-out infinite;
+}
+
+/* Twinkling effect */
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
   }
 }
