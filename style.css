@@ -564,7 +564,7 @@ a {
 }
 .back p {
   margin: 15px;
-  text-align: justify;
+  text-align: left;
 }
 
 @media screen and (max-width: 1200px) {
