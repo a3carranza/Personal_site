@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "Boogie", startRotation: -80, endRotation: -50 },
     { id: "camera", startRotation: 0, endRotation: -40 },
     { id: "hint", startRotation: 10, endRotation: -10 },
+    { id: "Nacho", startRotation: 20, endRotation: -15 },
   ];
 
   idsToAnimate.forEach(({ id, startRotation, endRotation }) => {
@@ -67,6 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       image: document.getElementById("Baseball"),
       dialog: document.getElementById("dialog-baseball"),
+    },
+    {
+      image: document.getElementById("Nacho"),
+      dialog: document.getElementById("dialog-Nacho"),
     },
     {
       image: document.getElementById("Boogie"),

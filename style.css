@@ -564,7 +564,7 @@ a {
 }
 .back p {
   margin: 15px;
-  text-align: left;
+  text-align: justify;
 }
 
 @media screen and (max-width: 1200px) {
@@ -805,7 +805,7 @@ a {
 #Baseball {
   width: 100%; /* Adjust to fit within container */
   max-width: 150px;
-  top: 47%;
+  top: 30%;
   right: 45%;
 }
 #Boogie {
@@ -813,6 +813,13 @@ a {
   max-width: 200px;
   top: 65%;
   right: 20%;
+  transform: rotate(-80deg);
+}
+#Nacho {
+  width: 100%; /* Adjust to fit within container */
+  max-width: 300px;
+  top: 60%;
+  right: 40%;
   transform: rotate(-80deg);
 }
 #camera {
@@ -927,6 +934,9 @@ dialog::backdrop {
     /* Adjust to fit within container */
     max-width: 100px;
   }
+  #Nacho {
+    max-width: 200px;
+  }
   #hint {
     top: 20%;
     right: 65%;
@@ -962,6 +972,12 @@ dialog::backdrop {
     width: 100%; /* Adjust to fit within container */
     max-width: 70px;
   }
+  #Nacho {
+    width: 100%; /* Adjust to fit within container */
+    max-width: 200px;
+    right: 30%;
+    top: 65%;
+  }
   #hint {
     top: 20%;
     right: 55%;
@@ -984,10 +1000,15 @@ dialog::backdrop {
     top: 30%;
   }
   #dino {
+    max-width: 200px;
     right: -5%;
   }
   #PC {
     right: 60%;
+  }
+  #Nacho {
+    right: 30%;
+    top: 45%;
   }
   #camera {
     max-width: 100px;
@@ -1006,6 +1027,7 @@ dialog::backdrop {
   dialog {
     width: 300px;
   }
+
   #hint {
     top: 20%;
     right: 50%;
@@ -1021,8 +1043,8 @@ dialog::backdrop {
   }
   #dino {
     width: 100%; /* Adjust to fit within container */
-    max-width: 250px;
-    right: -15%;
+    max-width: 200px;
+    right: -10%;
   }
   #arm {
     width: 100%; /* Adjust to fit within container */
@@ -1037,8 +1059,8 @@ dialog::backdrop {
   }
   #Baseball {
     width: 100%; /* Adjust to fit within container */
-    max-width: 75px;
-    top: 50%;
+    max-width: 60px;
+    top: 35%;
   }
   #Boogie {
     width: 100%; /* Adjust to fit within container */
