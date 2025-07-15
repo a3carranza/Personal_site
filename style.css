@@ -1004,18 +1004,20 @@ dialog::backdrop {
     right: -5%;
   }
   #PC {
+    top: 70%;
     right: 60%;
   }
   #Nacho {
-    right: 30%;
+    right: 25%;
     top: 45%;
   }
   #camera {
     max-width: 100px;
     top: 15%;
   }
-  #PC {
-    top: 70%;
+  #Baseball {
+    top: 35%;
+    max-width: 60px;
   }
   #Boogie {
     top: 70%;
