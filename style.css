@@ -820,7 +820,6 @@ a {
   max-width: 300px;
   top: 60%;
   right: 40%;
-  transform: rotate(-80deg);
 }
 #camera {
   width: 100%; /* Adjust to fit within container */
@@ -935,7 +934,8 @@ dialog::backdrop {
     max-width: 100px;
   }
   #Nacho {
-    max-width: 200px;
+    max-width: 300px;
+    right: 35%;
   }
   #hint {
     top: 20%;
