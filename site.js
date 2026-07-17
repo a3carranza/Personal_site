@@ -85,23 +85,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to open the dialog from the clicked image
   function openDialogFromImage(image, dialog) {
-    image.addEventListener("click", () => {
-      // Get the image's position on the screen
-      const imgPosition = image.getBoundingClientRect();
-      const dialogBox = dialog.querySelector(".dialog-box");
+    if (!image || !dialog) return; // <-- FIX
 
-      // Set initial dialog position to the image's position
+    image.addEventListener("click", () => {
+      const imgPosition = image.getBoundingClientRect();
+
       dialog.style.top = `${imgPosition.top}px`;
       dialog.style.left = `${imgPosition.left}px`;
       dialog.showModal();
 
-      // Animate the dialog to its final position
-      setTimeout(() => {
+      requestAnimationFrame(() => {
         dialog.classList.add("active");
         dialog.style.top = "50%";
         dialog.style.left = "50%";
-        dialog.style.transform = "translate(-50%, -50%)"; // Use your existing CSS transitions for fade-in and scaling
-      }, 5);
+        dialog.style.transform = "translate(-50%, -50%)";
+      });
     });
   }
 
@@ -121,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
           dialog.classList.remove("active");
         }
       },
-      true // Use capture phase to ensure it catches clicks before they reach the dialog
+      true, // Use capture phase to ensure it catches clicks before they reach the dialog
     );
   }
 
@@ -153,48 +151,78 @@ if (isTouchDevice) {
   // For non-touch devices, use hover effect
   // No additional JS needed; it's handled by CSS
 }
-// Stars
+// === FLICKERING STARFIELD ===
 const starContainer = document.querySelector(".star-container");
-const numberOfStars = 400; // Adjust as needed
+if (starContainer) {
+  const style = document.createElement("style");
+  document.head.appendChild(style);
 
-function getRandomNumber(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
-function createStar() {
-  const star = document.createElement("div");
-  star.classList.add("star");
-
-  // Check screen width
-  const screenWidth = window.innerWidth;
-  const maxVh = screenWidth < 870 ? 200 : 100;
-
-  // Random position
-  star.style.top = `${getRandomNumber(0, maxVh)}vh`;
-  star.style.left = `${getRandomNumber(0, 100)}vw`;
-
-  // Random size
-  const size = getRandomNumber(1, 3); // Star size between 1px and 3px
-  star.style.width = `${size}px`;
-  star.style.height = `${size}px`;
-
-  // Random animation duration
-  const animationDuration = getRandomNumber(1.5, 3); // Animation duration between 1.5s and 3s
-  star.style.animationDuration = `${animationDuration}s`;
-
-  return star;
-}
-
-function createStars() {
-  starContainer.innerHTML = ""; // Clear existing stars
-  for (let i = 0; i < numberOfStars; i++) {
-    const star = createStar();
-    starContainer.appendChild(star);
+  function rand(min, max) {
+    return Math.random() * (max - min) + min;
   }
+
+  function buildStarSet(count) {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    const stars = [];
+    for (let i = 0; i < count; i++) {
+      stars.push(
+        `${Math.floor(rand(0, w))}px ${Math.floor(
+          rand(0, h),
+        )}px rgba(255,255,255,${rand(0.4, 1).toFixed(2)})`,
+      );
+    }
+    return stars.join(",");
+  }
+
+  function buildStars() {
+    const set1 = buildStarSet(180);
+    const set2 = buildStarSet(100);
+
+    style.textContent = `
+      @keyframes flicker1 {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.2; }
+      }
+      @keyframes flicker2 {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 0.9; }
+      }
+      .star-container::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: ${set1};
+        animation: flicker1 3s ease-in-out infinite;
+      }
+      .star-container::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: ${set2};
+        animation: flicker2 3s ease-in-out infinite;
+      }
+    `;
+  }
+
+  buildStars();
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__stars);
+    window.__stars = setTimeout(buildStars, 300);
+  });
 }
 
-// Initial star creation
-createStars();
+const cursor = document.querySelector(".cursor");
 
-// Recreate stars on window resize
-window.addEventListener("resize", createStars);
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
