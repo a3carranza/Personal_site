@@ -626,11 +626,13 @@ a {
     text-overflow: wrap;
   }
   .publication-text h1 {
+    text-align: center;
     font-size: 50px;
   }
 
   /* Subheader styling */
   .publication-text h2 {
+    text-align: center;
     font-size: 40px;
   }
 
@@ -653,6 +655,9 @@ a {
   }
   .Home-text h2 {
     font-size: 20px;
+  }
+  .publication-text {
+    padding-left: 0px;
   }
   .publication-text h3 {
     font-size: 10px;
