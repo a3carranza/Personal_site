@@ -201,8 +201,8 @@ section {
 }
 
 .Home-text h1 {
-  font-family: "OstritchSans";
-  font-size: 100px;
+  font-family: "Picnic";
+  font-size: 150px;
   line-height: 1;
   color: white;
   margin: 0 0 30px;
@@ -390,8 +390,8 @@ section {
 
 /* Header styling */
 .publication-text h1 {
-  font-family: "OstritchSans";
-  font-weight: bold;
+  font-family: "Picnic";
+  letter-spacing: 3px;
   margin-bottom: 10px;
   font-size: 70px;
   color: #ffffff;
@@ -399,8 +399,8 @@ section {
 
 /* Subheader styling */
 .publication-text h2 {
-  font-family: "OstritchSans";
-  font-weight: bold;
+  font-family: "Picnic";
+  letter-spacing: 3px;
   margin-bottom: 10px;
   font-size: 60px;
   color: #ffffff;
@@ -567,7 +567,9 @@ a {
     padding-top: 60px;
     padding-bottom: 10px;
   }
-
+  .Home-text h1 {
+    font-size: 120px;
+  }
   .card-container {
     padding-top: 50px;
     width: 300px;
@@ -582,12 +584,14 @@ a {
     flex-direction: column;
     padding-bottom: 2rem;
   }
+
   .about-text {
     margin-top: 150px; /* Push the text down */
     text-align: center; /* Center text horizontally */
     margin-bottom: 2rem;
     max-width: 80%;
   }
+
   .about-text h1 {
     font-size: 60px;
   }
@@ -604,6 +608,9 @@ a {
   .image-container img {
     /* Adjust to fit within container */
     max-width: 350px; /* Max width if needed */
+  }
+  .Home-text h1 {
+    font-size: 100px;
   }
   .about-text {
     max-width: 95%;
