@@ -12,6 +12,7 @@
 </head>
 
 <body id="home-pageBG">
+
     <div class="over-lay">
         <span id="overtext"></span>
     </div>
@@ -56,26 +57,25 @@
         document.addEventListener('click', function () { document.querySelector('.over-lay').classList.add('fast-inactive') });
         const overlay = document.querySelector(".over-lay");
         new TypeIt('#overtext', {
-            speed: 60
+            speed: 50
         })
-            .type("Question: ")
             .type("How can we help students learn better?")
             .move(-14,)
             .delete(8,)
             .type("everyone",)
-            .move(null, { delay: 200, to: 'end', instant: true })
+            .move(null, { delay: 10, to: 'end', instant: true })
             .go();
 
         window.onload = function () {
             setTimeout(function () {
                 // Add the 'is-inactive' class to fade out the overlay
                 document.querySelector('.over-lay').classList.add('is-inactive');
-            }, 7000);
+            }, 5000);
 
             setTimeout(function () {
                 // Add the 'dead' class to change z-index
                 document.querySelector('.over-lay').classList.add('dead');
-            }, 7500);
+            }, 5500);
         };
 
 
